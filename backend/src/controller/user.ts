@@ -3,6 +3,7 @@ import { User } from "../model/user.js";
 import { NewUserRequestBody } from "../types/types.js";
 import { TryCatch } from "../middlewares/Error.js";
 import ErrorHandler from "../utils/utility-class.js";
+import { sendVerificationEmail } from "../utils/verificationEmail.js";
 
 export const newUser = TryCatch(
   async (
@@ -31,7 +32,7 @@ export const newUser = TryCatch(
       _id,
       dob: new Date(dob),
     });
-
+    await sendVerificationEmail(email,name);
     return res.status(201).json({
       success: true,
       message: `Welcome, ${user.name}`,

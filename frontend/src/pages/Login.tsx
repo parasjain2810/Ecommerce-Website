@@ -9,6 +9,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { useLoginMutation } from '../redux/api/userAPI';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { MessageResponse } from '../types/apiTypes';
+import { sendVerificationEmail } from '../../../backend/src/utils/verificationEmail';
 
 const Login = () => {
     const [gender,setgender]=useState<string>('');

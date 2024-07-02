@@ -1,6 +1,7 @@
 import { User } from "../model/user.js";
 import { TryCatch } from "../middlewares/Error.js";
 import ErrorHandler from "../utils/utility-class.js";
+import { sendVerificationEmail } from "../utils/verificationEmail.js";
 export const newUser = TryCatch(async (req, res, next) => {
     const { name, email, photo, gender, _id, dob } = req.body;
     let user = await User.findById(_id);
@@ -19,6 +20,7 @@ export const newUser = TryCatch(async (req, res, next) => {
         _id,
         dob: new Date(dob),
     });
+    await sendVerificationEmail(email, name);
     return res.status(201).json({
         success: true,
         message: `Welcome, ${user.name}`,

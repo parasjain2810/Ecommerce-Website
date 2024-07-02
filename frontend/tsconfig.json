@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "../backend/src/utils/verificationEmail.ts", "../backend/src/template/EmailTemplate.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.20",
     "@reduxjs/toolkit": "^2.2.3",
     "@stripe/react-stripe-js": "^2.7.1",
     "@stripe/stripe-js": "^3.4.0",
@@ -27,6 +28,7 @@
     "react-redux": "^9.1.1",
     "react-router-dom": "^6.22.3",
     "react-table": "^7.8.0",
+    "resend": "^3.4.0",
     "sass": "^1.72.0"
   },
   "devDependencies": {
